@@ -24,7 +24,7 @@ AMOUNTFULL=$(df | grep /mnt/cache | awk '{ printf "%d", $5 }')
 # Simple logic - if setpoint has been met or exceeded, run the mover. If not, don't run.
 if [ "$AMOUNTFULL" -ge "$SETPOINT" ]
     then
-        echo "Cache is $AMOUNTFULL% full, which is greater than or equal to the set point of $SETPOINT%. Running move$
+        echo "Cache is $AMOUNTFULL% full, which is greater than or equal to the set point of $SETPOINT%. Running move$"
         /usr/local/sbin/mover
     else
         echo "Cache is $AMOUNTFULL% full, which is less than the set point of $SETPOINT%. Not running mover." | /usr/$
